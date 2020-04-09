@@ -52,4 +52,5 @@ function Table({items}){
     )
 }
 
+export {parseNumber};
 export default Table;
