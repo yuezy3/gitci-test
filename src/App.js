@@ -39,7 +39,7 @@ function App() {
       <NameList names={all_names}></NameList>
       <SearchBar report={setSearchItems}></SearchBar>
       <Table items={filtered_items}></Table>
-      <FundGraph items={filtered_items} name={searchItems}></FundGraph>
+      <FundGraph items={filtered_items} name={searchItems.join(', ')}></FundGraph>
     </div>
   );
 }

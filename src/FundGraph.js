@@ -1,6 +1,6 @@
 import React from "react";
-import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  } from 'recharts';
+import {LineChart, Line, XAxis, YAxis, Tooltip, Legend} from 'recharts';
+import FundTable from './FundTable'
 import {parseNumber} from './Table'
 function addto(rawitems){
     let a = {};
@@ -24,6 +24,7 @@ function FundGraph({items,name}){
                 <Legend />
                 <Line name={name} type="monotone" dataKey="fund" stroke="#82ca9d" />
             </LineChart>
+            <FundTable data={data}></FundTable>
         </div>
     )
 }
