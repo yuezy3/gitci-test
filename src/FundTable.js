@@ -7,7 +7,7 @@ function tobody(data,ts){
         <tr>
             {ts.map(i=>{
                 let index = data.findIndex(e=>e['date']===i)
-            return <td>{(index===-1?"未发现":data[index]["fund"])}</td>
+                return <td>{(index===-1?"未发现":data[index]["fund"])}</td>
             })}
         </tr> )
 }

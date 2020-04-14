@@ -1,15 +1,9 @@
 import React from 'react';
 import 'react-tabulator/lib/styles.css'; // required styles
 import 'react-tabulator/lib/css/tabulator.min.css'; // theme
-import { ReactTabulator } from 'react-tabulator'
+import { ReactTabulator } from 'react-tabulator';
+import {parseNumber} from './Util';
 
-function parseNumber(s){
-    let news = s.replace('(','-')
-    let r = parseFloat(news.replace(/[,)(]/g, ''))
-    if (news.trim() && Number.isNaN(r)){console.log(`found NaN ${s}`)}
-    if (!Number.isNaN(r) && r<0){console.log(`found negtive: ${s}`)}
-    return Number.isNaN(r)?0:r
-}
 function Table({items}){
     let all_items = items;
     const columns = [
@@ -52,5 +46,4 @@ function Table({items}){
     )
 }
 
-export {parseNumber};
 export default Table;

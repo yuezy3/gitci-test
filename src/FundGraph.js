@@ -1,19 +1,10 @@
 import React from "react";
 import {LineChart, Line, XAxis, YAxis, Tooltip, Legend} from 'recharts';
 import FundTable from './FundTable'
-import {parseNumber} from './Table'
-function addto(rawitems){
-    let a = {};
-    let items = rawitems.map(v=>({"date":v["date"],"fund":parseNumber(v['金额'])}))
-    items.forEach(i=>{
-        a[i['date']] = (a[i['date']]?a[i['date']]:0) + i['fund']
-    })
-    let data = Object.entries(a).map(([date,fund])=>({'date':date,'fund':fund}));
-    console.log(data)
-    return data.sort((a,b)=>(a['date']).localeCompare(b['date']))
-}
+import {items2array} from './Util'
+
 function FundGraph({items,name}){
-    let data = addto(items)
+    let data = items2array(items)
     return (
         <div>
             <LineChart width={500} height={300} data={data} 
